@@ -3,7 +3,7 @@ let app = express();
 let cors = require('cors');
 let mongo = require('mongodb');
 let MongoClient = mongo.MongoClient;
-// let mongoURL = "mongodb://localhost:27017";
+
 let mongoURL = "mongodb+srv://test:test@cluster0.o0pdq4c.mongodb.net/?retryWrites=true&w=majority"
 let port = process.env.PORT || 9500
 let bodyParser = require("body-parser")
@@ -25,8 +25,8 @@ app.get('/getAllMatches', (req, res) =>{
     })
 }) 
 
+//fetching matches data wrt to matchId
 app.get('/getMatchStats', (req, res) =>{
-    // let id = req.params.id;
     let matchId = req.query.matchId
     
     let query = {}
@@ -40,49 +40,6 @@ app.get('/getMatchStats', (req, res) =>{
         res.send(result)
     })
 }) 
-
-app.get('/products/:categoryId', (req, res) =>{
-    let query = {}
-    let categoryId = req.params.categoryId;
-    let brand = req.query.brand
-    let price = req.query.price
-    let size = req.query.size
-    let color = req.query.color
-    
-    if (brand) {
-        query = {category: categoryId, brand: brand}
-    } else if (size && color) {
-        query = {category: categoryId, size: size, color: color}
-    } else if (size) {
-        query = {category: categoryId, size: size}
-    } else if (color) {
-        query = {category: categoryId, color: color}
-    } 
-
-    console.log(categoryId, brand, size, color);
-    db.collection('products').find(query).toArray((err, result) => {
-        if(err) throw err;
-        res.send(result)
-    })
-}) 
-
-app.get('/product_detail/:brand', (req, res) => {
-    let query = {}
-    let product = req.params.brand
-    if (product) {
-        query = {brand: product}
-    }
-    console.log(product);
-    db.collection('products').find(query).toArray((err, result) => {
-        if(err) throw err;
-        res.send(result)
-    })
-})
-
-
-
-
-
 
 
 //connect with mongodb
