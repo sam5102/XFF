@@ -4,8 +4,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, you can simply run:
 
+### `npm install`
 ### `npm start`
 
 Runs the app in the development mode.\
@@ -13,6 +14,14 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
+
+If you've previously installed create-react-app globally via npm install -g create-react-app, we recommend you uninstall the package using npm uninstall -g create-react-app or yarn global remove create-react-app to ensure that npx always uses the latest version.
+
+(npx comes with npm 5.2+ and higher, [https://gist.github.com/gaearon/4064d3c23a77c74a3614c498a8bb1c5f](see instructions for older npm versions))
+
+### `Creating an App` or Requirements to run React App
+
+You’ll need to have Node 14.0.0 or later version on your local development machine (but it’s not required on the server). We recommend using the latest LTS version. You can use nvm (macOS/Linux) or nvm-windows to switch Node versions between different projects.
 
 ### `npm test`
 
