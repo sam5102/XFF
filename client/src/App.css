@@ -1,0 +1,40 @@
+.App {
+  text-align: center;
+}
+
+table {
+  font-family: sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+  margin: auto;
+  margin-top: 25px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+tr > th {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+tbody > tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+} 
+
+tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+tr:hover {background-color: #ddd;}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 12px 15px;
+}
