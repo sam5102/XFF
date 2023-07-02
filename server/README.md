@@ -5,7 +5,7 @@
 Installation is done using the npm install command:
 
 ### `npm install`
-### `nodemon app.js`
+### `nodemon app.js or node app.js`
 
 
 Open server [http://localhost:9500](http://localhost:9500) to view it in your browser.

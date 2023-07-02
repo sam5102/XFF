@@ -44,9 +44,11 @@ const App = () => {
     
   }, [])
   
-  const handleChange = (value) => {
+  const handleChange = (value, label) => {
     const id = defaultValue.substring(6)
-    console.log(id);
+    if (value) {
+      setDefaultValue(`Match ${value}`)
+    }
     fetch(`http://localhost:9500/getMatchStats?matchId=${value ? value : id}`)
     .then((res) => res.json())
     .then((json) => {
@@ -54,21 +56,6 @@ const App = () => {
       console.log(json[0].stats);
     })
   }
-  
-  // const fetchData = () => {
-  //   let arr = []
-  //   let obj = {}
-  //   fetch(`http://localhost:9500/getMatchStats?matchId=${defaultValue}`)
-  //   .then((res) => res.json())
-  //   .then((json) => {
-  //     for (let i = 0; i < json.length; i++) {
-  //       obj = {value: json[i].title, label: json[i].title}
-  //       arr.push(obj)
-  //       setTitleArray(arr)
-  //     } 
-  //     console.log(json);
-  //   })
-  // }
 
   const {
     token: { colorBgContainer },
@@ -94,9 +81,10 @@ const App = () => {
           </Breadcrumb>
           
           <div style={{ padding: 24, minHeight: 430, background: colorBgContainer}}>
+            <p style={{fontSize: 16}}>Showing results for <strong>{defaultValue}</strong></p>
             {matchData ? 
             <table>
-              <tr>
+              <tr style={{fontSize: 15}}>
                 <th>Date</th>
                 <th colSpan="2">{matchData.date}</th>
               </tr>
@@ -136,7 +124,7 @@ const App = () => {
                 <td>{matchData.stats.teamB.corners}</td>
               </tr>
             </table>
-            : <img src={loader} alt="loading..." style={{height: 220, marginTop: 30, marginLeft: '40%'}}/>
+            : <img src={loader} alt="loading..." style={{display: 'block', height: 220, margin: 'auto'}}/>
           }
           </div>
         </Content>
@@ -145,7 +133,7 @@ const App = () => {
             textAlign: 'center',
           }}
         >
-          Ant Design ©2023 Created by Ant UED
+          XFF ©2023 Created by Ant UED
         </Footer>
       </Layout>
     </Layout>
@@ -154,7 +142,3 @@ const App = () => {
 
 export default App
 
-{/* <Header style={{ display: 'flex', alignItems: 'center'}}>
-        <div className="demo-logo" />
-        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']} items={items1} />
-      </Header> */}

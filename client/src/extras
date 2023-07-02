@@ -1,0 +1,19 @@
+  // const fetchData = () => {
+  //   let arr = []
+  //   let obj = {}
+  //   fetch(`http://localhost:9500/getMatchStats?matchId=${defaultValue}`)
+  //   .then((res) => res.json())
+  //   .then((json) => {
+  //     for (let i = 0; i < json.length; i++) {
+  //       obj = {value: json[i].title, label: json[i].title}
+  //       arr.push(obj)
+  //       setTitleArray(arr)
+  //     } 
+  //     console.log(json);
+  //   })
+  // }
+
+  {/* <Header style={{ display: 'flex', alignItems: 'center'}}>
+        <div className="demo-logo" />
+        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']} items={items1} />
+      </Header> */}
