@@ -5,6 +5,7 @@ import { useState } from 'react';
 
 import SearchBar from './components/search';
 import './App.css'
+import './App1.css'
 import loader from './giphy.gif'
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -94,32 +95,32 @@ const App = () => {
                 <td>Team 2</td>
               </tr>
               <tr>
-                <td style={{fontWeight: 600}}>Goals</td>
+                <td id='title'>Goals</td>
                 <td>{matchData.stats.teamA.goals}</td>
                 <td>{matchData.stats.teamB.goals}</td>
               </tr>
               <tr>
-                <td style={{fontWeight: 600}}>Possession</td>
+                <td id='title'>Possession</td>
                 <td>{matchData.stats.teamA.possession}</td>
                 <td>{matchData.stats.teamB.possession}</td>
               </tr>
               <tr>
-                <td style={{fontWeight: 600}}>Total Passes</td>
+                <td id='title'>Total Passes</td>
                 <td>{matchData.stats.teamA.passes}</td>
                 <td>{matchData.stats.teamB.passes}</td>
               </tr>
               <tr>
-                <td style={{fontWeight: 600}}>Shots</td>
+                <td id='title'>Shots</td>
                 <td>{matchData.stats.teamA.shots}</td>
                 <td>{matchData.stats.teamB.shots}</td>
               </tr>
               <tr>
-                <td style={{fontWeight: 600}}>Shots on target</td>
+                <td id='title'>Shots on target</td>
                 <td>{matchData.stats.teamA.shotsOnTarget}</td>
                 <td>{matchData.stats.teamB.shotsOnTarget}</td>
               </tr>
               <tr>
-                <td style={{fontWeight: 600}}>Corners</td>
+                <td id='title'>Corners</td>
                 <td>{matchData.stats.teamA.corners}</td>
                 <td>{matchData.stats.teamB.corners}</td>
               </tr>
